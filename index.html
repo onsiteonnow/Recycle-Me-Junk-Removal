@@ -85,7 +85,7 @@
           <div class="text-6xl md:text-7xl font-bold mb-4 text-emerald-400" id="total-price">$0</div>
           <p class="text-xl text-gray-300 mb-8">estimated total</p>
 
-          <a href="sms:+16074445583?body=Hi! I'd like a junk removal quote. Estimated total: $0. Items: [add your items here]"
+          <a href="sms:+16074445583?body=Hi! I'd like a junk removal estimate. Estimated total: $0. Items: [add your items here]"
              class="inline-block bg-green-600 hover:bg-green-700 px-10 py-6 rounded-xl text-xl md:text-2xl font-bold shadow-xl transition flex items-center justify-center gap-4">
             <i class="fas fa-comment-dots text-3xl"></i> 
             Submit Quick Estimate
@@ -101,8 +101,8 @@
 
   <!-- Footer -->
   <footer class="bg-black py-10 text-center text-gray-500 border-t border-gray-800">
-    <p>Wilkes-Barre, PA & Surrounding Areas • Free Quotes</p>
-    <p class="mt-2 text-sm">© 2025 Recycle Me Junk Removal • We Recycle Responsibly</p>
+    <p>Wilkes-Barre, PA & Surrounding Areas • Free Estimates</p>
+    <p class="mt-2 text-sm">© 2026 Recycle Me Junk Removal • We Recycle Responsibly</p>
   </footer>
 
   <!-- JavaScript -->
@@ -118,7 +118,6 @@
       { name: "Mattress (King)", price: 90, icon: "🛏️" },
       { name: "Box Spring (All Sizes)", price: 50, icon: "🛏️" },
       { name: "Refrigerator", price: 130, icon: "❄️" },
-      { name: "Freezer", price: 110, icon: "❄️" },
       { name: "Large TV (>50\")", price: 40, icon: "📺" },
       { name: "Dresser / Chest", price: 50, icon: "🪑" },
       { name: "Nightstand / Side Table", price: 20, icon: "🪑" },
@@ -129,8 +128,6 @@
       { name: "Dryer", price: 90, icon: "🧺" },
       { name: "Microwave", price: 20, icon: "🔥" },
       { name: "Tire (car/truck)", price: 25, icon: "🛞" },
-      { name: "Hot Tub", price: 350, icon: "🛁" },
-      { name: "Piano (upright)", price: 350, icon: "🎹" },
       { name: "Bicycle", price: 20, icon: "🚲" },
     ];
 
@@ -188,7 +185,7 @@
       const smsLink = document.querySelector('a[href^="sms:"]');
       if (smsLink) {
         smsLink.addEventListener('click', function(e) {
-          let summary = "Hi! I'd like a junk removal quote.\n";
+          let summary = "Hi! I'd like a junk removal estimate.\n";
           let hasItems = false;
           Object.entries(cart).forEach(([idx, qty]) => {
             if (qty > 0) {
