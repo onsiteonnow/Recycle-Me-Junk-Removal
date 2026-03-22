@@ -166,17 +166,27 @@
     }
 
     function updateTotal() {
-      let subtotal = 0;
-      Object.entries(cart).forEach(([idx, qty]) => {
-        subtotal += items[idx].price * qty;
-      });
-      let credit = 0;
-      if (subtotal >= 200) {
-        credit = Math.floor(subtotal * 0.05);
-      }
-      const total = Math.max(0, subtotal - credit);
-      document.getElementById("total-price").textContent = "$" + total;
+  let subtotal = 0;
+  let recyclableSubtotal = 0;
+
+  Object.entries(cart).forEach(([idx, qty]) => {
+    const item = items[idx];
+    const itemTotal = item.price * qty;
+    subtotal += itemTotal;
+
+    if (item.recyclable) {
+      recyclableSubtotal += itemTotal;
     }
+  });
+
+  let credit = 0;
+  if (recyclableSubtotal >= 200) {
+    credit = Math.floor(recyclableSubtotal * 0.05);
+  }
+
+  const total = Math.max(0, subtotal - credit);
+  document.getElementById("total-price").textContent = "$" + total;
+}
 
     // Update SMS link with current cart data when clicked
     document.addEventListener('DOMContentLoaded', function() {
