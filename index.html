@@ -74,7 +74,7 @@
 
       <div class="bg-gray-900/70 backdrop-blur-sm p-8 rounded-2xl border border-gray-700">
         <p class="text-center text-gray-400 mb-10 text-lg">
-          Add items below — total updates live (10% recycle credit on $200+ loads)
+          Add the items below — totals update in real time, plus earn a 5% recycle credit on eligible loads over $200!
         </p>
 
         <!-- Item grid -->
@@ -108,27 +108,27 @@
   <!-- JavaScript -->
   <script>
     const items = [
-      { name: "Yard Waste / Branches (55 gal bag)", price: 40, icon: "🌳" },
-      { name: "Construction Debris (55 gal bag)", price: 80, icon: "🧱" },
-      { name: "Junk Box (24x16)", price: 50, icon: "📦" },
-      { name: "Couch (single)", price: 80, icon: "🛋️" },
-      { name: "Sectional Sofa", price: 150, icon: "🛋️" },
-      { name: "Mattress (Twin)", price: 70, icon: "🛏️" },
-      { name: "Mattress (Queen/Full)", price: 80, icon: "🛏️" },
-      { name: "Mattress (King)", price: 90, icon: "🛏️" },
-      { name: "Box Spring (All Sizes)", price: 50, icon: "🛏️" },
-      { name: "Refrigerator", price: 130, icon: "❄️" },
-      { name: "Large TV (>50\")", price: 40, icon: "📺" },
-      { name: "Dresser / Chest", price: 50, icon: "🪑" },
-      { name: "Nightstand / Side Table", price: 20, icon: "🪑" },
-      { name: "Bookshelf", price: 40, icon: "📚" },
-      { name: "Dining Table", price: 60, icon: "🍽️" },
-      { name: "Dining Chairs (each)", price: 10, icon: "🪑" },
-      { name: "Washing Machine", price: 90, icon: "🧺" },
-      { name: "Dryer", price: 90, icon: "🧺" },
-      { name: "Microwave", price: 20, icon: "🔥" },
-      { name: "Tire (car/truck)", price: 25, icon: "🛞" },
-      { name: "Bicycle", price: 20, icon: "🚲" },
+      { name: "Yard Waste / Branches (55 gal bag)", price: 40, icon: "🌳" , recyclable: false },
+      { name: "Construction Debris (per 55 gal bag)", price: 80, icon: "🧱", recyclable: false },
+      { name: "Junk Box (24x16)", price: 50, icon: "📦" , recyclable: false },
+      { name: "Couch (single)", price: 80, icon: "🛋️" , recyclable: false },
+      { name: "Sectional Sofa", price: 150, icon: "🛋️" , recyclable: false },
+      { name: "Mattress (Twin)", price: 70, icon: "🛏️" , recyclable: false },
+      { name: "Mattress (Queen/Full)", price: 80, icon: "🛏️" , recyclable: false },
+      { name: "Mattress (King)", price: 90, icon: "🛏️" , recyclable: false },
+      { name: "Box Spring (All Sizes)", price: 50, icon: "🛏️" , recyclable: false },
+      { name: "Refrigerator", price: 130, icon: "❄️", recyclable: true },
+      { name: "Large TV (>50\")", price: 40, icon: "📺" , recyclable: true },
+      { name: "Dresser / Chest", price: 50, icon: "🪑" , recyclable: false },
+      { name: "Nightstand / Side Table", price: 20, icon: "🪑" , recyclable: false },
+      { name: "Bookshelf", price: 40, icon: "📚" , recyclable: false },
+      { name: "Dining Table", price: 60, icon: "🍽️" , recyclable: false },
+      { name: "Dining Chairs (each)", price: 10, icon: "🪑" , recyclable: false },
+      { name: "Washing Machine", price: 90, icon: "🧺" , recyclable: true },
+      { name: "Dryer", price: 90, icon: "🧺" , recyclable: true },
+      { name: "Microwave", price: 20, icon: "🔥" , recyclable: true },
+      { name: "Tire (car/truck)", price: 25, icon: "🛞" , recyclable: false },
+      { name: "Bicycle", price: 20, icon: "🚲" , recyclable: true },
     ];
 
     let cart = {};
@@ -172,7 +172,7 @@
       });
       let credit = 0;
       if (subtotal >= 200) {
-        credit = Math.floor(subtotal * 0.10);
+        credit = Math.floor(subtotal * 0.05);
       }
       const total = Math.max(0, subtotal - credit);
       document.getElementById("total-price").textContent = "$" + total;
