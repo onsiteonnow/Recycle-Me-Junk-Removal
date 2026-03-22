@@ -181,8 +181,8 @@
   });
 
   let credit = 0;
-  if (recyclableSubtotal >= 100) {
-    credit = Math.floor(recyclableSubtotal * 0.10);
+  if (recyclableSubtotal >= 200) {
+    credit = Math.floor(recyclableSubtotal * 0.05);
   }
 
   const total = Math.max(0, subtotal - credit);
